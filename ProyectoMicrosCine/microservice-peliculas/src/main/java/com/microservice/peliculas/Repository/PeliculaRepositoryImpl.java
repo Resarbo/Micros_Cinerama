@@ -23,7 +23,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
         String sql = "SELECT * FROM peliculas WHERE id = ?";
         return jdbcTemplate.query(sql, rowMapper, id).stream().findFirst();
     }
-
+    //holaaa
     @Override
     public List<Pelicula> findAll() {
         String sql = "SELECT * FROM Pelicula";
