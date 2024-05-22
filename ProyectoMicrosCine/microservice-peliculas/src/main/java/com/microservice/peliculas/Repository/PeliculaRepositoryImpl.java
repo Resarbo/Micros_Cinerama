@@ -20,7 +20,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public Optional<Pelicula> findById(int id) {
-        String sql = "SELECT * FROM peliculas WHERE id = ?";
+        String sql = "SELECT * FROM Pelicula WHERE nID = ?";
         return jdbcTemplate.query(sql, rowMapper, id).stream().findFirst();
     }
 
@@ -32,7 +32,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public void save(Pelicula pelicula) {
-        String sql = "INSERT INTO peliculas (nombre, descripcion, director, imagen, duracion, trailer, usuarioRegistro, categoriaPelicula) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Pelicula (cNombre, cDescripcion, cDirector, cImagen, nDuracion, nIDTrailer, cUsuarioRegistro, nIDCategoria) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(sql,
                 pelicula.getNombre(),
                 pelicula.getDescripcion(),
@@ -46,16 +46,16 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public void update(Pelicula pelicula) {
-        String sql = "UPDATE peliculas SET " +
-                "nombre = ?, " +
-                "descripcion = ?, " +
-                "director = ?, " +
-                "imagen = ?, " +
-                "duracion = ?, " +
-                "trailer = ?, " +
+        String sql = "UPDATE Pelicula SET " +
+                "cNombre = ?, " +
+                "cDescripcion = ?, " +
+                "cDirector = ?, " +
+                "cImagen = ?, " +
+                "nDuracion = ?, " +
+                "nIDTrailer = ?, " +
                 "cUsuarioRegistro = ?, " +
-                "categoriaPelicula = ? " +
-                "WHERE id = ?";
+                "nIDCategoria = ? " +
+                "WHERE nID = ?";
         jdbcTemplate.update(sql,
                 pelicula.getNombre(),
                 pelicula.getDescripcion(),
@@ -70,7 +70,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE FROM peliculas WHERE id = ?";
+        String sql = "DELETE FROM Pelicula WHERE nID = ?";
         jdbcTemplate.update(sql, id);
     }
 }

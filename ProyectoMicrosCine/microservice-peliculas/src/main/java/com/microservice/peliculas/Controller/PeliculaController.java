@@ -29,20 +29,20 @@ public class PeliculaController {
         return ResponseEntity.ok(peliculas);
     }
 
-    @PostMapping
+    @PostMapping("/guardar")
     public ResponseEntity<Void> createPelicula(@RequestBody Pelicula pelicula) {
         peliculaService.save(pelicula);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/guardar/{id}")
     public ResponseEntity<Void> updatePelicula(@PathVariable int id, @RequestBody Pelicula pelicula) {
         pelicula.setId(id);
         peliculaService.update(pelicula);
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> deletePelicula(@PathVariable int id) {
         peliculaService.deleteById(id);
         return ResponseEntity.noContent().build();
