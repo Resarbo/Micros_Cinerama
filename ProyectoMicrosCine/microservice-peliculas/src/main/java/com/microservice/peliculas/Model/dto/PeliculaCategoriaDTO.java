@@ -9,7 +9,5 @@ public class PeliculaCategoriaDTO {
     private String peliculaDescripcion;
     private String peliculaDirector;
     private String peliculaImagen;
-    private int peliculaDuracion;
-    private String peliculaTrailer;
     private String categoriaNombre;
 }
