@@ -1,4 +1,4 @@
-package com.microservice.peliculas.Repository;
+package com.microservice.peliculas.Repository.RowMapper;
 
 import com.microservice.peliculas.Model.Pelicula;
 import org.springframework.jdbc.core.RowMapper;
@@ -17,12 +17,8 @@ public class PeliculaRowMapper implements RowMapper<Pelicula> {
         pelicula.setDirector(rs.getString(5));
         pelicula.setImagen(rs.getString(6));
         pelicula.setDuracion(rs.getInt(7));
-        pelicula.setFechaRegistro(rs.getDate(8));
-        pelicula.setUsuarioRegistro(rs.getString(9));
-        pelicula.setFechaEliminacion(rs.getDate(10) != null ? rs.getDate(10) : null);
-        pelicula.setUsuarioEliminacion(rs.getString(11));
-        pelicula.setTrailer(rs.getString(12));
-        pelicula.setCategoriaPelicula(rs.getString(13));
+        pelicula.setTrailer(rs.getString(8));
+        pelicula.setCategoriaPelicula(rs.getString(9));
         return pelicula;
     }
 }
