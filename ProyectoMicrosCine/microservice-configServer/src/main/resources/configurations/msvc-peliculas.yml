@@ -1,16 +1,14 @@
 server:
-  port: 9090
+  port: 8090
 
 spring:
   application:
-    name: msvc-cartelera
+    name: msvc-peliculas
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;databaseName=BDMovieCity;trustServerCertificate=true
     username: cesar
     password: 123
-  config:
-    import: optional:configserver:http//localhost:8888
 
 eureka:
   instance:

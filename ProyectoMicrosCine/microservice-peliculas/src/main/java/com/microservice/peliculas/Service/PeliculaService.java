@@ -12,4 +12,5 @@ public interface PeliculaService {
     void update(Pelicula pelicula);
     void deleteById(int id);
     List<PeliculaCategoriaDTO> getPeliculasByCategoria(int idCategoria);
+
 }
