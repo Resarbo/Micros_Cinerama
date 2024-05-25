@@ -1,6 +1,7 @@
 package com.microservice.peliculas.Service;
 
 import com.microservice.peliculas.Model.Pelicula;
+import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
 import com.microservice.peliculas.Repository.PeliculaRepository;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +38,10 @@ public class PeliculaServiceImpl implements PeliculaService{
     @Override
     public void deleteById(int id) {
         peliculaRepository.deleteById(id);
+    }
+
+    @Override
+    public List<PeliculaCategoriaDTO> getPeliculasByCategoria(int idCategoria) {
+        return peliculaRepository.findPeliculasByCategoria(idCategoria);
     }
 }

@@ -6,30 +6,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pelicula {
+public class Trailer {
     private int id;
     private boolean estado;
     @NotEmpty
     private String nombre;
     @NotEmpty
-    private String descripcion;
+    private String ruta;
     @NotEmpty
-    private String director;
-    @NotEmpty
-    private String imagen;
-    @NotEmpty
-    private int duracion;
-    @NotEmpty
-    private String trailer;
+    private String codigo;
     @NotEmpty
     private Date fechaRegistro;
     @NotEmpty
     private String usuarioRegistro;
     private Date fechaEliminacion;
     private String usuarioEliminacion;
-    @NotEmpty
-    private String categoriaPelicula;
 }

@@ -2,6 +2,7 @@ package com.microservice.peliculas.Controller;
 
 import com.microservice.peliculas.Model.Pelicula;
 import com.microservice.peliculas.Service.PeliculaService;
+import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,5 +47,11 @@ public class PeliculaController {
     public ResponseEntity<Void> deletePelicula(@PathVariable int id) {
         peliculaService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/categoria/{idCategoria}")
+    public ResponseEntity<List<PeliculaCategoriaDTO>> getPeliculasByCategoria(@PathVariable int idCategoria) {
+        List<PeliculaCategoriaDTO> peliculasByCategoria = peliculaService.getPeliculasByCategoria(idCategoria);
+        return ResponseEntity.ok(peliculasByCategoria);
     }
 }

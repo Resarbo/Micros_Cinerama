@@ -1,6 +1,7 @@
 package com.microservice.peliculas.Service;
 
 import com.microservice.peliculas.Model.Pelicula;
+import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
 
 import java.util.List;
 
@@ -10,4 +11,5 @@ public interface PeliculaService {
     void save(Pelicula pelicula);
     void update(Pelicula pelicula);
     void deleteById(int id);
+    List<PeliculaCategoriaDTO> getPeliculasByCategoria(int idCategoria);
 }
