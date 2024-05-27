@@ -84,8 +84,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
             return dto;
         });
     }
-
-   @Override
+    @Override
     public List<CarteleraPeliculaDTO> byPelicula(int idPelicula) {
        String sql = "";
        return jdbcTemplate.query(sql, new Object[]{idPelicula}, (rs, rowNum) -> {

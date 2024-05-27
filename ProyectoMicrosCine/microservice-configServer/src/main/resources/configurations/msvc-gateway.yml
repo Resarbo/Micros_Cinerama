@@ -18,3 +18,7 @@ spring:
           uri: http://localhost:8090
           predicates:
             - Path=/api/peliculas/**
+        - id: cartelera
+          uri: http://localhost:9090
+          predicates:
+            - Path=/api/cartelera/**
