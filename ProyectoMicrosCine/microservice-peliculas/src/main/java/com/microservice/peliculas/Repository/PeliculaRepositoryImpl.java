@@ -25,19 +25,22 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public Optional<Pelicula> findById(int id) {
-        String sql = "{call Sel_Peliculas_ID(?)}";
+        String sql = StoredProcedures.SEL_PELICULAS_ID;
+        //String sql = "{call Sel_Peliculas_ID(?)}";
         return jdbcTemplate.query(sql, rowMapperPelicula, id).stream().findFirst();
     }
     //holaaa
     @Override
     public List<Pelicula> findAll() {
-        String sql = "SELECT * FROM Pelicula";
+        String sql = StoredProcedures.SEL_PELICULAS;
+        //String sql = "SELECT * FROM Pelicula";
         return jdbcTemplate.query(sql, rowMapperPelicula);
     }
 
     @Override
     public void save(Pelicula pelicula) {
-        String sql = "INSERT INTO Pelicula (cNombre, cDescripcion, cDirector, cImagen, nDuracion, nIDTrailer, cUsuarioRegistro, nIDCategoria) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = StoredProcedures.INS_PELICULAS;
+        //String sql = "INSERT INTO Pelicula (cNombre, cDescripcion, cDirector, cImagen, nDuracion, nIDTrailer, cUsuarioRegistro, nIDCategoria) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
         jdbcTemplate.update(sql,
                 pelicula.getNombre(),
                 pelicula.getDescripcion(),
@@ -51,7 +54,8 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public void update(Pelicula pelicula) {
-        String sql = "UPDATE Pelicula SET " +
+        String sql = StoredProcedures.UPD_PELICULAS;
+        /*String sql = "UPDATE Pelicula SET " +
                 "cNombre = ?, " +
                 "cDescripcion = ?, " +
                 "cDirector = ?, " +
@@ -60,7 +64,7 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
                 "nIDTrailer = ?, " +
                 "cUsuarioRegistro = ?, " +
                 "nIDCategoria = ? " +
-                "WHERE nID = ?";
+                "WHERE nID = ?";*/
         jdbcTemplate.update(sql,
                 pelicula.getNombre(),
                 pelicula.getDescripcion(),
@@ -75,17 +79,19 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
 
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE FROM Pelicula WHERE nID = ?";
+        String sql = StoredProcedures.DEL_PELICULAS;
+        //String sql = "DELETE FROM Pelicula WHERE nID = ?";
         jdbcTemplate.update(sql, id);
     }
 
     @Override
     public List<PeliculaCategoriaDTO> findPeliculasByCategoria(int idCategoria) {
-        String sql = "SELECT p.nID as pelicula_id, p.cNombre as pelicula_nombre, p.cDescripcion as pelicula_descripcion, "
+        String sql = StoredProcedures.SEL_PELICULASBYCATEGORIA_ID;
+        /*String sql = "SELECT p.nID as pelicula_id, p.cNombre as pelicula_nombre, p.cDescripcion as pelicula_descripcion, "
                 + "p.cDirector as pelicula_director, p.cImagen as pelicula_imagen, p.nDuracion as pelicula_duracion, "
                 + "p.nIDTrailer as pelicula_trailer, c.cNombre as categoria_nombre "
                 + "FROM Pelicula p JOIN CategoriaPelicula c ON p.nIDCategoria = c.nID "
-                + "WHERE c.nID = ?";
+                + "WHERE c.nID = ?";*/
         return jdbcTemplate.query(sql, new Object[]{idCategoria}, (rs, rowNum) -> {
             PeliculaCategoriaDTO dto = new PeliculaCategoriaDTO();
             dto.setPeliculaId(rs.getInt("pelicula_id"));
@@ -93,8 +99,6 @@ public class PeliculaRepositoryImpl implements PeliculaRepository {
             dto.setPeliculaDescripcion(rs.getString("pelicula_descripcion"));
             dto.setPeliculaDirector(rs.getString("pelicula_director"));
             dto.setPeliculaImagen(rs.getString("pelicula_imagen"));
-            dto.setPeliculaDuracion(rs.getInt("pelicula_duracion"));
-            dto.setPeliculaTrailer(rs.getString("pelicula_trailer"));
             dto.setCategoriaNombre(rs.getString("categoria_nombre"));
             return dto;
         });

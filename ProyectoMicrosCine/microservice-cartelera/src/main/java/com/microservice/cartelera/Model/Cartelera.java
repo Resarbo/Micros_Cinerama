@@ -14,11 +14,13 @@ import java.util.Date;
 public class Cartelera {
     private int id;
     private boolean estado;
+    @NotEmpty
     private Date fechaRegistro;
     @NotEmpty
     private double precio;
     @NotEmpty
     private String usuarioRegistro;
+
     private Date fechaEliminacion;
     private String usuarioEliminacion;
     @NotEmpty

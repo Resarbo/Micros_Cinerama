@@ -1,5 +1,6 @@
 package com.microservice.peliculas.Service;
 
+import com.microservice.peliculas.Client.CarteleraClient;
 import com.microservice.peliculas.Model.Pelicula;
 import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
 import com.microservice.peliculas.Repository.PeliculaRepository;
@@ -10,6 +11,8 @@ import java.util.List;
 @Service
 public class PeliculaServiceImpl implements PeliculaService{
     private final PeliculaRepository peliculaRepository;
+
+    private CarteleraClient carteleraClient;
 
     public PeliculaServiceImpl(PeliculaRepository peliculaRepository) {
         this.peliculaRepository = peliculaRepository;
@@ -44,4 +47,10 @@ public class PeliculaServiceImpl implements PeliculaService{
     public List<PeliculaCategoriaDTO> getPeliculasByCategoria(int idCategoria) {
         return peliculaRepository.findPeliculasByCategoria(idCategoria);
     }
+
+    /*public CarteleraDTO saveCartelera(int peliculaId, CarteleraDTO cartelera) {
+        cartelera.setPeliculaId(peliculaId);
+        Cartelera nuevoCartelera = CarteleraClient.saveCartelera();
+        return nuevoCartelera;
+    }*/
 }
