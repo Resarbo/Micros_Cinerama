@@ -4,12 +4,14 @@ import com.microservice.cartelera.Model.Cartelera;
 import com.microservice.cartelera.Model.dto.CarteleraHorarioDTO;
 import com.microservice.cartelera.Model.dto.CarteleraPeliculaDTO;
 import com.microservice.cartelera.Repository.CarteleraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CarteleraServiceImpl implements CarteleraService{
+
     private final CarteleraRepository carteleraRepository;
 
     public CarteleraServiceImpl(CarteleraRepository carteleraRepository) {
@@ -47,8 +49,9 @@ public class CarteleraServiceImpl implements CarteleraService{
     }
 
     @Override
-    public List<CarteleraPeliculaDTO> byPelicula(int idPelicula) {
-        return carteleraRepository.byPelicula(idPelicula);
+    public List<CarteleraPeliculaDTO> findByIdPelicula(int idPelicula) {
+        return carteleraRepository.findCarteleraByPelicula(idPelicula);
     }
+
 
 }

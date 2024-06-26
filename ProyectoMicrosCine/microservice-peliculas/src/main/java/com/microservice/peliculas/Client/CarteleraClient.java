@@ -13,15 +13,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-cartelera")
+@FeignClient(name = "msvc-cartelera", url = "localhost:9090/api/cartelera")
 public interface CarteleraClient {
 
+    @GetMapping("/pelicula/{idPelicula}")
+    List<CarteleraDTO> findCarteleraByPelicula(@PathVariable int idPelicula);
 
-    @GetMapping("/buscar-pelicula/{peliculaId}")
+   /* @GetMapping("/buscar-pelicula/{peliculaId}")
             List<CarteleraDTO> findCarteleraByPelicula(@PathVariable int idPelicula);
     @PostMapping("/cartelera")
     public CarteleraDTO save(@RequestBody CarteleraDTO Cartelera);
 
     @GetMapping("/cartelera/pelicula/{peliculaId}")
-    public List<CarteleraDTO> getCartelera(@PathVariable("peliculaId") int perliculaId);
+    public List<CarteleraDTO> getCartelera(@PathVariable("peliculaId") int perliculaId);*/
+
+
+
 }

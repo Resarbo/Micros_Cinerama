@@ -56,4 +56,14 @@ public class PeliculaController {
         return ResponseEntity.ok(peliculasByCategoria);
     }
 
+    @GetMapping("/cartelera/{idCartelera}")
+    public ResponseEntity<List<?>> getPeliculasByCartelera() {
+        return ResponseEntity.ok(peliculaService.findAll());
+    }
+
+    @GetMapping("/search-cartelera/{idPelicula}")
+    public ResponseEntity<?> findCarteleraByPelicula(@PathVariable int idPelicula){
+        return ResponseEntity.ok(peliculaService.findCarteleraByPelicula(idPelicula));
+    }
+
 }

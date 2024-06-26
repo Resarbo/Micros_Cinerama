@@ -14,5 +14,5 @@ public interface CarteleraService {
     void deleteById(int id);
     List<CarteleraHorarioDTO> getCarteleraByHorario(int idHorario);
 
-    List<CarteleraPeliculaDTO> byPelicula(int idPelicula);
+    List<CarteleraPeliculaDTO> findByIdPelicula(int idPelicula);
 }

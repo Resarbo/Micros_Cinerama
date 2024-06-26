@@ -80,22 +80,25 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
             dto.setCarteleraId(rs.getInt("cartelera_id"));
             dto.setCarteleraPrecio(rs.getDouble("cartelera_precio"));
             dto.setCarteleraPelicula(rs.getString("cartelera_pelicula"));
+            dto.setCarteleraSala(rs.getString("cartelera_sala"));
             dto.setCarteleraHorario(rs.getString("cartelera_horario"));
             return dto;
         });
     }
+
     @Override
-    public List<CarteleraPeliculaDTO> byPelicula(int idPelicula) {
-       String sql = "";
-       return jdbcTemplate.query(sql, new Object[]{idPelicula}, (rs, rowNum) -> {
-           CarteleraPeliculaDTO dto = new CarteleraPeliculaDTO();
-           dto.setCarteleraId(rs.getInt("cartelera_id"));
-           dto.setPrecio(rs.getDouble("precio"));
-           dto.setPeliculaNombre(rs.getString("pelicula_nombre"));
-           dto.setSala(rs.getString("sala"));
-           dto.setHorario(rs.getString("horario"));
-           return dto;
-       });
+    public List<CarteleraPeliculaDTO> findCarteleraByPelicula(int idPelicula) {
+        String sql = StoredProceduresC.SEL_CARTELERABYPELICULA_ID;
+        return jdbcTemplate.query(sql, new Object[]{idPelicula}, (rs, rowNum) -> {
+            CarteleraPeliculaDTO dto = new CarteleraPeliculaDTO();
+            dto.setCarteleraId(rs.getInt("cartelera_id"));
+            dto.setPrecio(rs.getDouble("cartelera_precio"));
+            dto.setPeliculaNombre(rs.getString("cartelera_nombre"));
+            dto.setSala(rs.getString("cartelera_sala"));
+            dto.setHorario(rs.getString("cartelera_inicio"));
+
+            return dto;
+        });
     }
 
 

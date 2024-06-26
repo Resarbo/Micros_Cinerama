@@ -7,4 +7,5 @@ public class StoredProceduresC {
     public static final String UPD_CARTELERA = "{call Upd_Cartelera ( ?, ?, ?, ?, ?, ?}";
     public static final String DEL_CARTELERA = "{call Del_Cartelera ( ? )}";
     public static final String SEL_CARTELERABYHORARIO_ID = "{call Sel_CarteleraByHorario_ID ( ? )}";
+    public static final String SEL_CARTELERABYPELICULA_ID = "{call Sel_CarteleraByPelicula_ID ( ? )}";
 }

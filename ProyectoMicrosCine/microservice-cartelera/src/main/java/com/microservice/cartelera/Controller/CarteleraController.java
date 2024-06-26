@@ -57,13 +57,9 @@ public class CarteleraController {
         return ResponseEntity.ok(carteleraByHorario);
     }
 
-    @GetMapping("/pelicula/{peliculaId}")
-    public ResponseEntity<List<CarteleraPeliculaDTO>> listarCarteleraPorPeliculaId(@PathVariable("idPelicula") int idPelicula){
-        List<CarteleraPeliculaDTO> cartelera = carteleraService.byPelicula(idPelicula);
-        if(cartelera.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(cartelera);
+    @GetMapping("/search-pelicula/{idPelicula}")
+    public ResponseEntity<List<CarteleraPeliculaDTO>> findByIdPelicula(@PathVariable int idPelicula){
+        return ResponseEntity.ok(carteleraService.findByIdPelicula(idPelicula));
     }
 }
 

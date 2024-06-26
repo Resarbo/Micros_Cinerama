@@ -20,8 +20,7 @@ public interface CarteleraRepository {
 
     List<CarteleraHorarioDTO> findCarteleraByHorario(int idHorario);
 
-    List<CarteleraPeliculaDTO> byPelicula(int idPelicula);
+    List<CarteleraPeliculaDTO> findCarteleraByPelicula(int idPelicula);
 
-    // List<CarteleraPeliculaDTO> byPelicula(int idPelicula);
 
 }
