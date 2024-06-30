@@ -1,0 +1,18 @@
+server:
+  port: 9070
+
+spring:
+  application:
+    name: msvc-confiteria
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=BDMovieCity;trustServerCertificate=true
+    username: sa
+    password: sa123
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

@@ -24,6 +24,7 @@
     <module>microservice-peliculas</module>
     <module>microservice-cartelera</module>
     <module>microservice-sedes</module>
+    <module>microservice-confiteria</module>
   </modules>
 
   <properties>

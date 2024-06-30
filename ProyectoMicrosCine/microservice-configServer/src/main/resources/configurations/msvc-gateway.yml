@@ -26,3 +26,7 @@ spring:
           uri: http://localhost:9080
           predicates:
             - Path=/api/sedes/**
+        - id: confiteria
+          uri: http://localhost:9070
+          predicates:
+            - Path=/api/confiteria/**
