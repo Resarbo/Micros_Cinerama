@@ -7,9 +7,10 @@ CREATE PROCEDURE Sel_Cartelera_ID(
 )
 AS
 BEGIN
-	Select c.nID, c.mPrecio, c.dtFechaRegistro, h.cInicio, s.cNombre
+	Select c.nID, c.mPrecio, c.dtFechaRegistro, h.cInicio, s.cNombre, se.cNombre
 	from Cartelera c
 	inner join Horario h on h.nID = c.nIDHorario
 	inner join Sala s on s.nID = c.nIDHorario
+	inner join Sede se on se.nID = c.nIDSala
 	where c.nID = @nId
 END

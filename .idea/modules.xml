@@ -3,12 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Cine.iml" filepath="$PROJECT_DIR$/.idea/Cine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/ProyectoMicrosCine.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/ProyectoMicrosCine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-cartelera/microservice-cartelera.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/microservice-cartelera/microservice-cartelera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-configServer/microservice-configServer.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/microservice-configServer/microservice-configServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-eureka/microservice-eureka.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/microservice-eureka/microservice-eureka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-gateway/microservice-gateway.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/microservice-gateway/microservice-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-peliculas/microservice-peliculas.iml" filepath="$PROJECT_DIR$/ProyectoMicrosCine/microservice-peliculas/microservice-peliculas.iml" />
     </modules>
   </component>
 </project>

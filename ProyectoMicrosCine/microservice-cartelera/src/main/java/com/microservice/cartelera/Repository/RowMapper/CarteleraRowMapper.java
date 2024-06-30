@@ -13,15 +13,11 @@ public class CarteleraRowMapper implements RowMapper<Cartelera> {
         Cartelera cartelera = new Cartelera();
 
         cartelera.setId(rs.getInt(1));
-        //cartelera.setEstado(rs.getBoolean(2));
-        //cartelera.setFechaRegistro(rs.getDate(3));
         cartelera.setPrecio(rs.getDouble(2));
-        //cartelera.setUsuarioRegistro(rs.getString(5));
-        //cartelera.setFechaEliminacion(rs.getDate(6));
-        //cartelera.setUsuarioEliminacion(rs.getString(7));
         cartelera.setPelicula(rs.getString(3));
         cartelera.setSala(rs.getString(4));
         cartelera.setHorario(rs.getString(5));
+        cartelera.setSede(rs.getString(6));
 
         return cartelera;
     }

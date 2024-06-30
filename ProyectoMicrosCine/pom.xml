@@ -23,6 +23,7 @@
     <module>microservice-configServer</module>
     <module>microservice-peliculas</module>
     <module>microservice-cartelera</module>
+    <module>microservice-sedes</module>
   </modules>
 
   <properties>

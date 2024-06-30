@@ -9,4 +9,5 @@ public class CarteleraHorarioDTO {
     private String carteleraPelicula;
     private String carteleraSala;
     private String carteleraHorario;
+    private String carteleraSede;
 }

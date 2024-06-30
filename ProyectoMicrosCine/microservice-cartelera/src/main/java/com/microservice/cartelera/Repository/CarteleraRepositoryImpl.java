@@ -50,7 +50,8 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
                 cartelera.getUsuarioRegistro(),
                 cartelera.getPelicula(),
                 cartelera.getSala(),
-                cartelera.getHorario());
+                cartelera.getHorario(),
+                cartelera.getSede());
     }
 
     @Override
@@ -63,6 +64,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
                 cartelera.getPelicula(),
                 cartelera.getSala(),
                 cartelera.getHorario(),
+                cartelera.getSede(),
                 cartelera.getId());
     }
 
@@ -82,6 +84,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
             dto.setCarteleraPelicula(rs.getString("cartelera_pelicula"));
             dto.setCarteleraSala(rs.getString("cartelera_sala"));
             dto.setCarteleraHorario(rs.getString("cartelera_horario"));
+            dto.setCarteleraSede(rs.getString("cartelera_sede"));
             return dto;
         });
     }
@@ -96,6 +99,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
             dto.setPeliculaNombre(rs.getString("cartelera_nombre"));
             dto.setSala(rs.getString("cartelera_sala"));
             dto.setHorario(rs.getString("cartelera_inicio"));
+            dto.setSede(rs.getString("cartelera_sede"));
 
             return dto;
         });

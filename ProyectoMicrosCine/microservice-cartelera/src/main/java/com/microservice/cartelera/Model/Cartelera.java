@@ -29,4 +29,6 @@ public class Cartelera {
     private String sala;
     @NotEmpty
     private String horario;
+    @NotEmpty
+    private String sede;
 }

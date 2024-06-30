@@ -3,12 +3,13 @@ IF OBJECT_ID('Upd_Cartelera') IS NOT NULL
 GO
 
 CREATE PROCEDURE Upd_Cartelera(
-	@mPrecio money,
-	@cUsuarioRegistro varchar (100),
-	@nIDPelicula varchar(100),
-	@nIDSala varchar(100),
-	@nIDHorario varchar(100),
-	@nID int
+	    @mPrecio money,
+     	@cUsuarioRegistro varchar (100),
+     	@nIDPelicula varchar(100),
+     	@nIDSala varchar(100),
+     	@nIDHorario varchar(100),
+     	@nIDSede varchar(100),
+     	@nID int
 )
 AS
 BEGIN
@@ -21,7 +22,8 @@ BEGIN
 				cUsuarioRegistro = @cUsuarioRegistro,
 				nIDPelicula = @nIDPelicula,
 				nIDSala = @nIDSala,
-				nIDHorario = @nIDHorario
+				nIDHorario = @nIDHorario,
+				nIDSede = @nIDSede
 			where nID = @nID
 		COMMIT TRAN
 	END TRY

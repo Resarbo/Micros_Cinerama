@@ -10,5 +10,6 @@ public class CarteleraPeliculaDTO {
     private String peliculaNombre;
     private String sala;
     private String horario;
+    private String sede;
 
 }

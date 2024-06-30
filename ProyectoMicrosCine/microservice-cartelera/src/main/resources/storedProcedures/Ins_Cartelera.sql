@@ -8,15 +8,17 @@ CREATE PROCEDURE Ins_Cartelera(
 	@cUsuarioRegistro varchar (100),
 	@nIDPelicula varchar(100),
 	@nIDSala varchar(100),
-	@nIDHorario varchar(100)
+	@nIDHorario varchar(100),
+	@nIDSala varchar(100),
+	@nIDSede varchar(100)
 )
 AS
 BEGIN
 	SET NOCOUNT ON
 	BEGIN TRY
 		BEGIN TRAN
-			INSERT INTO Cartelera(mPrecio, cUsuarioRegistro,nIDPelicula, nIDSala, nIDHorario)
-			values(@mPrecio, @cUsuarioRegistro, @nIDPelicula, @nIDSala, @nIDHorario)
+			INSERT INTO Cartelera(mPrecio, cUsuarioRegistro,nIDPelicula, nIDSala, nIDHorario, nIDSala, nIDSede)
+			values(@mPrecio, @cUsuarioRegistro, @nIDPelicula, @nIDSala, @nIDHorario, @nIDSala, @nIDSede)
 		COMMIT TRAN
 	END TRY
 	BEGIN CATCH

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/ProyectoMicrosCine/microservice-sedes/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -9,19 +12,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="microservice-gateway" />
         <module name="microservice-configServer" />
+        <module name="microservice-sedes" />
         <module name="microservice-peliculas" />
         <module name="microservice-eureka" />
         <module name="microservice-cartelera" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="microservice-cartelera" target="19" />
-      <module name="microservice-configServer" target="19" />
-      <module name="microservice-eureka" target="19" />
-      <module name="microservice-gateway" target="19" />
-      <module name="microservice-peliculas" target="19" />
-      <module name="ProyectoMicrosCine" target="19" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -30,6 +26,7 @@
       <module name="microservice-eureka" options="-parameters" />
       <module name="microservice-gateway" options="-parameters" />
       <module name="microservice-peliculas" options="-parameters" />
+      <module name="microservice-sedes" options="-parameters" />
     </option>
   </component>
 </project>
