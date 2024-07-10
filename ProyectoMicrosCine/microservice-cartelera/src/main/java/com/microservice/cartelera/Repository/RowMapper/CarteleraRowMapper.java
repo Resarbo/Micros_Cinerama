@@ -14,7 +14,7 @@ public class CarteleraRowMapper implements RowMapper<Cartelera> {
 
         cartelera.setId(rs.getInt(1));
         cartelera.setPrecio(rs.getDouble(2));
-        cartelera.setPelicula(rs.getString(3));
+        cartelera.setId_pelicula(rs.getString(3));
         cartelera.setSala(rs.getString(4));
         cartelera.setHorario(rs.getString(5));
         cartelera.setSede(rs.getString(6));

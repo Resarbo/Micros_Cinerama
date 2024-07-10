@@ -24,7 +24,7 @@ public class Cartelera {
     private Date fechaEliminacion;
     private String usuarioEliminacion;
     @NotEmpty
-    private String pelicula;
+    private String id_pelicula;
     @NotEmpty
     private String sala;
     @NotEmpty

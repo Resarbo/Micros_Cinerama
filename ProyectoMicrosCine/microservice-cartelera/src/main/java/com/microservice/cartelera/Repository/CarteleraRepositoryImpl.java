@@ -48,7 +48,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
                 cartelera.getFechaRegistro(),
                 cartelera.getPrecio(),
                 cartelera.getUsuarioRegistro(),
-                cartelera.getPelicula(),
+                cartelera.getId_pelicula(),
                 cartelera.getSala(),
                 cartelera.getHorario(),
                 cartelera.getSede());
@@ -61,7 +61,7 @@ public class CarteleraRepositoryImpl implements CarteleraRepository {
                 cartelera.getFechaRegistro(),
                 cartelera.getPrecio(),
                 cartelera.getUsuarioRegistro(),
-                cartelera.getPelicula(),
+                cartelera.getId_pelicula(),
                 cartelera.getSala(),
                 cartelera.getHorario(),
                 cartelera.getSede(),
