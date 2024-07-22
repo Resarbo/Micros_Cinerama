@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.mycompany.app</groupId>
 		<artifactId>ProyectoMicrosCine</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.microservice.peliculas</groupId>
-	<artifactId>microservice-peliculas</artifactId>
+	<groupId>com.microservice.ventas</groupId>
+	<artifactId>microservice-ventas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>microservice-peliculas</name>
-	<description>Spring Boot Microservice Peliculas</description>
+	<name>microservice-ventas</name>
+	<description>Spring Boot Microservice Ventas</description>
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
@@ -60,24 +60,13 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.stripe/stripe-java -->
 		<dependency>
-            <groupId>com.microservice.cartelera</groupId>
-            <artifactId>microservice-cartelera</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-		<dependency>
-			<groupId>com.microservice.cartelera</groupId>
-			<artifactId>microservice-cartelera</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
+			<groupId>com.stripe</groupId>
+			<artifactId>stripe-java</artifactId>
+			<version>26.4.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.microservice.cartelera</groupId>
-			<artifactId>microservice-cartelera</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

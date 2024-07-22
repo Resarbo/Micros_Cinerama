@@ -7,8 +7,8 @@ spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;databaseName=BDMovieCity;trustServerCertificate=true
-    username: sa
-    password: sa123
+    username: cesar
+    password: 123
 
 eureka:
   instance:

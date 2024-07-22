@@ -1,6 +1,9 @@
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 server:
   port: 8080
@@ -10,23 +13,41 @@ spring:
     name: msvc-gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
       routes:
         - id: peliculas
-          uri: http://localhost:8090
+          uri: lb://msvc-peliculas
           predicates:
             - Path=/api/peliculas/**
         - id: cartelera
-          uri: http://localhost:9090
+          uri: lb://msvc-cartelera
           predicates:
             - Path=/api/cartelera/**
         - id: sedes
-          uri: http://localhost:9080
+          uri: lb://msvc-sedes
           predicates:
             - Path=/api/sedes/**
         - id: confiteria
-          uri: http://localhost:9070
+          uri: lb://msvc-confiteria
           predicates:
             - Path=/api/confiteria/**
+        - id: ventas
+          uri: lb://msvc-ventas
+          predicates:
+            - Path=/api/ventas/**

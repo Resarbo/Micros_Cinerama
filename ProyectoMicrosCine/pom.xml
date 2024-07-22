@@ -25,6 +25,7 @@
     <module>microservice-cartelera</module>
     <module>microservice-sedes</module>
     <module>microservice-confiteria</module>
+    <module>microservice-ventas</module>
   </modules>
 
   <properties>
