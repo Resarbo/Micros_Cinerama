@@ -2,6 +2,7 @@ package com.microservice.peliculas.Service;
 
 import com.microservice.peliculas.Model.Pelicula;
 import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
+import com.microservice.peliculas.http.response.CarteleraByPeliculaResponse;
 
 import java.util.List;
 
@@ -12,5 +13,7 @@ public interface PeliculaService {
     void update(Pelicula pelicula);
     void deleteById(int id);
     List<PeliculaCategoriaDTO> getPeliculasByCategoria(int idCategoria);
+
+    CarteleraByPeliculaResponse findCarteleraByPelicula(int idPelicula);
 
 }

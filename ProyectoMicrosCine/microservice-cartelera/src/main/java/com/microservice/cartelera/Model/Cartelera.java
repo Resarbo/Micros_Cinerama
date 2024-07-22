@@ -1,6 +1,7 @@
 package com.microservice.cartelera.Model;
 
 import jakarta.validation.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,15 +17,18 @@ public class Cartelera {
     @NotEmpty
     private Date fechaRegistro;
     @NotEmpty
+    private double precio;
+    @NotEmpty
     private String usuarioRegistro;
-    private float precio;
+
     private Date fechaEliminacion;
     private String usuarioEliminacion;
     @NotEmpty
-    private String pelicula;
+    private String id_pelicula;
     @NotEmpty
     private String sala;
     @NotEmpty
     private String horario;
-    private int idPelicula;
+    @NotEmpty
+    private String sede;
 }

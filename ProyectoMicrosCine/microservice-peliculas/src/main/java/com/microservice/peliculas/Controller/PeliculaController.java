@@ -1,6 +1,7 @@
 package com.microservice.peliculas.Controller;
 
 import com.microservice.peliculas.Model.Pelicula;
+import com.microservice.peliculas.Model.dto.CarteleraDTO;
 import com.microservice.peliculas.Service.PeliculaService;
 import com.microservice.peliculas.Model.dto.PeliculaCategoriaDTO;
 import org.springframework.http.HttpStatus;
@@ -54,4 +55,10 @@ public class PeliculaController {
         List<PeliculaCategoriaDTO> peliculasByCategoria = peliculaService.getPeliculasByCategoria(idCategoria);
         return ResponseEntity.ok(peliculasByCategoria);
     }
+
+    @GetMapping("/search-cartelera/{idPelicula}")
+    public ResponseEntity<?> findCarteleraByPelicula(@PathVariable int idPelicula){
+        return ResponseEntity.ok(peliculaService.findCarteleraByPelicula(idPelicula));
+    }
+
 }

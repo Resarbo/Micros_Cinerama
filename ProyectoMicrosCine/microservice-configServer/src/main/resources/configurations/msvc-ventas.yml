@@ -1,0 +1,23 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: msvc-ventas
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=BDMovieCity;trustServerCertificate=true
+    username: cesar
+    password: 123
+
+stripe:
+  key:
+    public: pk_test_51PfE1qAQDRLTGNq0fKLazIdROXz9bpLVKPTDk8Zo2AWL6ZAgVPVrWLOlbE3LcdyzvPxpGVZ8WurnceWnogGjyMPH00asq3Ig4j
+    secret: sk_test_51PfE1qAQDRLTGNq0BcoZL4zrL5LOQzhbnTZNVHnZNfH7gkCUGfYzgURyvnIgPZ7PWcj6AwVZtXnHKPn6bsiWvn8f00EGszO9nS
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

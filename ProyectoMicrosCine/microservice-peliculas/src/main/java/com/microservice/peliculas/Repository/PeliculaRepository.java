@@ -13,4 +13,5 @@ public interface PeliculaRepository {
     void update(Pelicula pelicula);
     void deleteById(int id);
     List<PeliculaCategoriaDTO> findPeliculasByCategoria(int idCategoria);
+    
 }

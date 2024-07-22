@@ -13,8 +13,9 @@ public class CarteleraDTO {
     private int peliculaId;
 
     private boolean estado;
-    private float precio;
+    private double precio;
     private String peliculaNombre;
     private String sala;
     private String horario;
+
 }
